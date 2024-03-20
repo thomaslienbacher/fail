@@ -14,5 +14,5 @@ else
         CONFIG="-C ${FAILPATH}/src/experiments/${EXP}/config.cmake -DEXPERIMENTS_ACTIVATED:STRING=${EXP}"
     fi
 
-    cmake ${CONFIG} ${FAILPATH}
+    cmake ${CONFIG} -DCMAKE_AGPP_FLAGS:STRING="-D__NO_MATH_INLINES --c_compiler clang++-10" ${FAILPATH}
 fi
